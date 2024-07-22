@@ -1,0 +1,29 @@
+DOCUMENTATION 
+
+22/07/2024
+
+First lesson of specialisation. Group call. Jessie, Chahat and Clarisse present. 
+
+-	Jessie expressed interest in travel saving idea. 
+-	Clarisse suggested we set 3 types of objectives. 
+-	Jessie created OneNote exploring this. 
+-	Discussed Weekly timeslot for group work. 
+-	Discussed strengths for dividing coding. 
+-	Chahat raised concerns over coding with python and HTML, this needs to be explored further as a group. 
+-	Weekly timeslot reserved as Friday 6.30-8.30 IST. (Chahat to check with Haritha). 
+
+Before Friday: 
+1)	Explore old examples.
+2)	Clarisse to get HTML python explanation. 
+3)	Each do individual SWOT analysis. 
+4)	Familiarise ourselves with the marking criteria.  
+5)	Clarisse to create GitHub repository. 
+6)	Chahat to contact Haritha re Friday. 
+
+For Friday: 
+1)	Check the plan with Haritha.
+2)	Finish the objectives table.
+3)	Normalise/plan database as group. 
+4)	Plan core functions as group.
+5)	Plan core HTML as group.
+6)	Start to divide the workload. 
