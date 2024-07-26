@@ -27,3 +27,110 @@ For Friday:
 4)	Plan core functions as group.
 5)	Plan core HTML as group.
 6)	Start to divide the workload. 
+
+
+--------------------------------------------------------------------------
+26/07/24
+
+Group call scheduled. 
+
+Catching up from last week: 
+- Awaiting confirmation about Haritha. Decided to go ahead with planning and she can be added back to work if needed. 
+- Clarisse had issues with Trello but understands it better now. 
+- Confirmed everyone had access to both Trello and GitHub Repository. 
+- Group feeling more confident about implementing HTML within pycharms after watching video. 
+
+Call takeaway notes: 
+
+- Going ahead with holiday budget tracker idea. 
+- Discussed previous projects and marking criteria - how to implement group working into project to maximise marks. (Trello and GitHub). 
+- Decided that all sections of work will be planned and executed as a group, but each section will have a 'lead'. 
+- Finished planning core objectives table (on Trello). These are fluid. 
+- Normalised SQL table plan as group (on Trello). 
+- Planned SQL area/cards and checklists on SQL.
+- Agreed on agenda for next week's call. 
+
+
+Clarisse SWOT analysis
+
+STRENGTH:
+Organising code
+Presenting
+Python
+
+WEAKNESSES:
+Front end (HTML)
+
+OPPORTUNITIES: 
+Ready to learn/ expand knowledge.
+
+THREATS:
+Being over ambitious, running out of time.
+
+
+Jessie SWOT analysis 
+
+STRENGTHS:	
+- Most comfortable with SQL and tables!
+- I managed to link up SQL and Python OK, with my assignment, so I’m pretty comfortable with that.
+- Have some HTML and CSS experience. Enough to add in a background image and make the layout of the front end look OK.
+
+WEAKNESSES:
+- Testing. I really didn’t get a lot of time to review those classes.
+- Linking API Client side to Python. Never have been able to run a working example!
+
+OPPORTUNITIES:
+- Happy to learn other ways to link UI to Python, such as the HTML video Clarisse sent.
+- I have an assigned ‘buddy’ in our Tech Dept at work, I can consult with on any queries/issues.
+
+THREATS:
+- I’m working full time, so I’m limited to weekends mostly.
+
+
+Chahat SWOT analysis
+
+STRENGTH:
+- can create sql databases and tables
+- intermediate Python
+
+WEAKNESSES:
+- working with API/flask and testing
+
+OPPORTUNITIES:
+- to learn and build something
+
+THREATS:
+- technological changes
+
+
+
+
+Findings from SWOT: 
+
+"Leads" 
+- Chahat SQL
+- Clarisse Python 
+- Jessie HTML 
+
+Other takeaways: 
+
+- Not over complicate the code. 
+- Best to create something simple which works and then add to it, not be too ambitious too early. 
+- Chahat suggested having a backup working within the pycharms console in case we can't get the HTML running. 
+
+
+Before Friday: 
+- Clarisse to try and make Trello key objectives into their own areas and checklists (break down and relate to each other).
+- Clarisse to update audit on GitHub and other relevant areas.
+- Jessie will tidy up Trello notes.
+- All going to make notes about SQL database planning, e.g. constraints, data types etc (in chat).
+- All to brush up on general knowledge. 
+- Get confirmation re Haritha's group participation.  
+
+
+On Friday:
+- Plan SQL code (including constraints etc), generate pseudo-code. 
+- Begin planning python programming with the API. 
+- Create the 'back-end' area in Trello and checklists for each chunk of this work to plan moving forward. 
+
+--------------------------------------------------------------------------
