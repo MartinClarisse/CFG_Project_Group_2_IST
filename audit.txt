@@ -134,3 +134,41 @@ On Friday:
 - Create the 'back-end' area in Trello and checklists for each chunk of this work to plan moving forward. 
 
 --------------------------------------------------------------------------
+
+02/08/2024
+
+- Final discussion on group assignment. Handout confirmed and Jessie will make amendments to architecture diagram following in depth database discussions. Jessie to submit it all to Sophia. 
+
+- We broke down the layout of all the tables within the database. This was the majority of the meeting so we all had familiarity with it. Utilised diagram to help with the database logic.
+
+- discussion on adding NOT NULL/DEFAULTS and initialising 0 values rather than NULL. Helpful for implementation when returning 0 values rather than NULL. 
+
+- Discussed group meeting time change to 11am(BST) meetup instead of 2pm so as to allow Chahat a Friday night off haha. 
+
+
+BEFORE FRIDAY:
+- (J) Submit group assignment. 
+- (J) share class notes
+- (Cl) query Sophia meeting
+- (Cl) push updates minutes/audit/etc
+- (Ch) create database
+- (CH) push database to branch 
+- (CH) create pull request 
+- (ALL) Sophia meeting
+- (J) branch main for html scripts
+- (J) make pull request
+- (C) branch main for python console
+- (C) make pull request 
+
+ON FRIDAY:
+- Breakdown what needs coding on python to combine work.
+- Testing and exception handling implementation plan. 
+- Assign coding to group members. 
+- CHECK IN: review objectives and timeframes. 
+
+BERAKDOWN WHAT NEEDS CODING ON PYTHON TO COMBINE WORK
+TESTING AND EXCEPTION HANDLING IMPLEMENTATIONS 
+ASSIGN CODING TO GROUP MEMEBERS 
+REVIEW OBJECTIVES AND TIMEFRAME  
+
+
