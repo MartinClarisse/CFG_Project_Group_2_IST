@@ -1,0 +1,197 @@
+DOCUMENTATION 
+
+22/07/2024
+
+First lesson of specialisation. Group call. Jessie, Chahat and Clarisse present. 
+
+-	Jessie expressed interest in travel saving idea. 
+-	Clarisse suggested we set 3 types of objectives. 
+-	Jessie created OneNote exploring this. 
+-	Discussed Weekly timeslot for group work. 
+-	Discussed strengths for dividing coding. 
+-	Chahat raised concerns over coding with python and HTML, this needs to be explored further as a group. 
+-	Weekly timeslot reserved as Friday 6.30-8.30 IST. (Chahat to check with Haritha). 
+
+Before Friday: 
+1)	Explore old examples.
+2)	Clarisse to get HTML python explanation. 
+3)	Each do individual SWOT analysis. 
+4)	Familiarise ourselves with the marking criteria.  
+5)	Clarisse to create GitHub repository. 
+6)	Chahat to contact Haritha re Friday. 
+
+For Friday: 
+1)	Check the plan with Haritha.
+2)	Finish the objectives table.
+3)	Normalise/plan database as group. 
+4)	Plan core functions as group.
+5)	Plan core HTML as group.
+6)	Start to divide the workload. 
+
+
+--------------------------------------------------------------------------
+26/07/24
+
+Group call scheduled. 
+
+Catching up from last week: 
+- Awaiting confirmation about Haritha. Decided to go ahead with planning and she can be added back to work if needed. 
+- Clarisse had issues with Trello but understands it better now. 
+- Confirmed everyone had access to both Trello and GitHub Repository. 
+- Group feeling more confident about implementing HTML within pycharms after watching video. 
+
+Call takeaway notes: 
+
+- Going ahead with holiday budget tracker idea. 
+- Discussed previous projects and marking criteria - how to implement group working into project to maximise marks. (Trello and GitHub). 
+- Decided that all sections of work will be planned and executed as a group, but each section will have a 'lead'. 
+- Finished planning core objectives table (on Trello). These are fluid. 
+- Normalised SQL table plan as group (on Trello). 
+- Planned SQL area/cards and checklists on SQL.
+- Agreed on agenda for next week's call. 
+
+
+Clarisse SWOT analysis
+
+STRENGTH:
+Organising code
+Presenting
+Python
+
+WEAKNESSES:
+Front end (HTML)
+
+OPPORTUNITIES: 
+Ready to learn/ expand knowledge.
+
+THREATS:
+Being over ambitious, running out of time.
+
+
+Jessie SWOT analysis 
+
+STRENGTHS:	
+- Most comfortable with SQL and tables!
+- I managed to link up SQL and Python OK, with my assignment, so I’m pretty comfortable with that.
+- Have some HTML and CSS experience. Enough to add in a background image and make the layout of the front end look OK.
+
+WEAKNESSES:
+- Testing. I really didn’t get a lot of time to review those classes.
+- Linking API Client side to Python. Never have been able to run a working example!
+
+OPPORTUNITIES:
+- Happy to learn other ways to link UI to Python, such as the HTML video Clarisse sent.
+- I have an assigned ‘buddy’ in our Tech Dept at work, I can consult with on any queries/issues.
+
+THREATS:
+- I’m working full time, so I’m limited to weekends mostly.
+
+
+Chahat SWOT analysis
+
+STRENGTH:
+- can create sql databases and tables
+- intermediate Python
+
+WEAKNESSES:
+- working with API/flask and testing
+
+OPPORTUNITIES:
+- to learn and build something
+
+THREATS:
+- technological changes
+
+
+
+
+Findings from SWOT: 
+
+"Leads" 
+- Chahat SQL
+- Clarisse Python 
+- Jessie HTML 
+
+Other takeaways: 
+
+- Not over complicate the code. 
+- Best to create something simple which works and then add to it, not be too ambitious too early. 
+- Chahat suggested having a backup working within the pycharms console in case we can't get the HTML running. 
+
+
+Before Friday: 
+- Clarisse to try and make Trello key objectives into their own areas and checklists (break down and relate to each other).
+- Clarisse to update audit on GitHub and other relevant areas.
+- Jessie will tidy up Trello notes.
+- All going to make notes about SQL database planning, e.g. constraints, data types etc (in chat).
+- All to brush up on general knowledge. 
+- Get confirmation re Haritha's group participation.  
+
+
+On Friday:
+- Plan SQL code (including constraints etc), generate pseudo-code. 
+- Begin planning python programming with the API. 
+- Create the 'back-end' area in Trello and checklists for each chunk of this work to plan moving forward. 
+
+--------------------------------------------------------------------------
+
+02/08/2024
+
+- Final discussion on group assignment. Handout confirmed and Jessie will make amendments to architecture diagram following in depth database discussions. Jessie to submit it all to Sophia. 
+
+- We broke down the layout of all the tables within the database. This was the majority of the meeting so we all had familiarity with it. Utilised diagram to help with the database logic.
+
+- discussion on adding NOT NULL/DEFAULTS and initialising 0 values rather than NULL. Helpful for implementation when returning 0 values rather than NULL. 
+
+- Discussed group meeting time change to 11am(BST) meetup instead of 2pm so as to allow Chahat a Friday night off haha. 
+
+
+BEFORE FRIDAY:
+- (J) Submit group assignment. 
+- (J) share class notes
+- (Cl) query Sophia meeting
+- (Cl) push updates minutes/audit/etc
+- (Ch) create database
+- (CH) push database to branch 
+- (CH) create pull request 
+- (ALL) Sophia meeting
+- (J) branch main for html scripts
+- (J) make pull request
+- (C) branch main for python console
+- (C) make pull request 
+
+ON FRIDAY:
+- Breakdown what needs coding on python to combine work.
+- Testing and exception handling implementation plan. 
+- Assign coding to group members. 
+- CHECK IN: review objectives and timeframes. 
+
+--------------------------------------------------------------------------
+
+08/08/2024
+
+Group call within CFG lesson. 
+
+Jessie demoed code she had been working on in the week. 
+Jessie to switch focus for a little while whilst Clarisse and Chahat work on Database and Python console. 
+
+--------------------------------------------------------------------------
+
+09/08/2024
+
+Friday Group Meeting
+
+Looked at SQL code which Chahat had written. Decided we would only enter one 'dud' value and then keep the rest of the mock data to be manually inserted through the form. Hopefully this should remove the error. Otherwise database is looking great.
+
+Jessie demoed amazing HTML work, helpful for Clarisse and Chahat to better visualise how python is going to link the two together. 
+
+Agreed to work to getting the code to work linearly to get the inputs done on the form. Clarisse to do this on python this weekend. 
+
+Planned to meet Monday so that we can see where we're up to and divide out more of the work. Once we have the basics of the three parts talking to each other properly this should all be pretty straightforward. 
+
+--------------------------------------------------------------------------
+
+12/08/2024
+
+Monday Group Meeting
+
