@@ -166,4 +166,32 @@ ON FRIDAY:
 - Assign coding to group members. 
 - CHECK IN: review objectives and timeframes. 
 
+--------------------------------------------------------------------------
+
+08/08/2024
+
+Group call within CFG lesson. 
+
+Jessie demoed code she had been working on in the week. 
+Jessie to switch focus for a little while whilst Clarisse and Chahat work on Database and Python console. 
+
+--------------------------------------------------------------------------
+
+09/08/2024
+
+Friday Group Meeting
+
+Looked at SQL code which Chahat had written. Decided we would only enter one 'dud' value and then keep the rest of the mock data to be manually inserted through the form. Hopefully this should remove the error. Otherwise database is looking great.
+
+Jessie demoed amazing HTML work, helpful for Clarisse and Chahat to better visualise how python is going to link the two together. 
+
+Agreed to work to getting the code to work linearly to get the inputs done on the form. Clarisse to do this on python this weekend. 
+
+Planned to meet Monday so that we can see where we're up to and divide out more of the work. Once we have the basics of the three parts talking to each other properly this should all be pretty straightforward. 
+
+--------------------------------------------------------------------------
+
+12/08/2024
+
+Monday Group Meeting
 
