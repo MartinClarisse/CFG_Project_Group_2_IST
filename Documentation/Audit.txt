@@ -195,3 +195,15 @@ Planned to meet Monday so that we can see where we're up to and divide out more 
 
 Monday Group Meeting
 
+Clarisse demoed the SQL database creation file. 
+Group discussed the new design layout and scheduled check ins. 
+
+Before Friday: 
+- Jessie to rework the three HTML templates. 
+- Chahat to look into password type and output in HTML to add to Jessie's work. 
+- Clarisse to work on linking python to HTML inputs and SQL database. 
+
+--------------------------------------------------------------------------
+
+16/08/2024
+
