@@ -5,12 +5,14 @@ VERY SIMPLE OVERVIEW:
 Webpages: 
 
 Homepage 
-Create Account
-Login 
+- Create Account
+- Login 
+
 Dashbard (user)
-Add New Trip
+- Add New Trip
+
 'Trip_Name'
-Add Contribution ('Trip_Name')
+- Add Contribution ('Trip_Name')
 
 ----------------------------------
 
