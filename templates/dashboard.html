@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Buddy</title>
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+<body>
+
+<h1>Welcome to Budget Buddy!</h1>
+
+<div class = "container1">
+<h2>Your Trips:</h2>
+
+</div>
+
+
+<button onclick="unhiddenForm()">Create a New Trip...</button>
+
+<div id="tripForm" style="display:none" class = "container2">
+
+    <form name="trip_data" action="group.html" method="post">
+        <label>Trip Name:</label>
+            <br>
+        <input type="text" name="trip_name">
+            <br><br>
+        <label>Start Date:</label>
+            <br>
+        <input type="date" name="start_date">
+            <br><br>
+        <label>Number of Group Members:</label>
+            <br>
+        <input type="number" name="group_size">
+            <br><br>
+        <label>Flights Total:</label>
+            <br>
+        <input type="number" name="flights_total">
+            <br><br>
+        <label>Accommodation Total:</label>
+            <br>
+        <input type="number" name="accommodation_total">
+            <br><br>
+        <label>Transfers Total:</label>
+            <br>
+        <input type="number" name="transfers_total">
+            <br><br>
+        <label>Activities Total:</label>
+            <br>
+        <input type="number" name="activities_total">
+            <br><br>
+        <label>Miscellaneous Costs Total:</label>
+            <br>
+        <input type="number" name="miscellaneous_total">
+            <br><br>
+        <input type="submit" value="submit">
+
+    </form>
+
+</div>
+
+<script>
+    function unhiddenForm(){
+    var x = document.getElementById("tripForm");
+    x.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
