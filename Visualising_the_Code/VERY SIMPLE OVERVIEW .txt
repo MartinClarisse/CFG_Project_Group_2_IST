@@ -1,0 +1,30 @@
+VERY SIMPLE OVERVIEW: 
+
+----------------------------------
+
+Webpages: 
+
+Homepage 
+Create Account
+Login 
+Dashbard (user)
+Add New Trip
+'Trip_Name'
+Add Contribution ('Trip_Name')
+
+----------------------------------
+
+Database Tables:
+
+Trips 
+Member_Details 
+Costs
+Contributions 
+Authentication 
+
+----------------------------------
+
+Things to consider: 
+
+Testing 
+Email Triggers for hitting milestones. 
