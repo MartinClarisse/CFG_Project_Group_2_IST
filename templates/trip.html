@@ -5,12 +5,41 @@
     <title>New Trip Page</title>
     <link rel="stylesheet" href="../static/main.css">
 </head>
+
+<div class="top_nav">
+  <a class="active" href="dashboard.html">Return to Dashboard</a>
+</div>
+
 <body>
 
-<h1>Tell us about your new trip...</h1>
+<h1>Tell us who's going and what they've paid...</h1>
 
 
 <div class = "container2">
+
+    <script>
+    function restFunction() {
+  document.getElementById("myForm").reset();
+}
+</script>
+
+<form name="friends_data" method="post">
+        <label>Friend's Name:</label>
+            <br>
+        <input type="text" name="friend_name">
+            <br><br>
+        <label>Friend's Email Address:</label>
+            <br>
+        <input type="email" name="friend_email">
+            <br><br>
+        <label>Friend's contribution</label>
+            <br>
+        <label>(can be zero to start):</label>
+            <br>
+        <input type="number" name="friend_contribution">
+            <br><br>
+        <input type="submit" onclick="resetFunction()" value="submit">
+</form>
 
 
 
