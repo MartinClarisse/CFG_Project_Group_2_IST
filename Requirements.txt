@@ -1,2 +1,11 @@
-* Include version of MySQL and Pycharm
-* Include any imports and installs 
+Python version = Python 3.12
+MySQL version = MySQL 8.0
+
+
+Imports:
+
+
+Installs:
+pip install mysql.connector
+pip install --upgrade mysql-connector-python
+pip install Flask
