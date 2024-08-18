@@ -14,14 +14,9 @@
 
 <h1>Tell us who's going and what they've paid...</h1>
 
+<div id="captureMessage" style="display:none" class = "message1">Contribution captured!</div>
 
 <div class = "container2">
-
-    <script>
-    function restFunction() {
-  document.getElementById("myForm").reset();
-}
-</script>
 
 <form name="friends_data" method="post">
         <label>Friend's Name:</label>
@@ -41,6 +36,11 @@
         <input type="submit" onclick="resetFunction()" value="submit">
 </form>
 
+<script>
+    function resetFunction() {
+    document.getElementById("friends_data").reset();
+    }
+</script>
 
 
 </div>
