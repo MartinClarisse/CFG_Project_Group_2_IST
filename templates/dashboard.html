@@ -5,9 +5,14 @@
     <title>Budget Buddy</title>
     <link rel="stylesheet" href="../static/main.css">
 </head>
+
+<div class="top_nav">
+  <a class="active" href="index.html">Logout</a>
+</div>
+
 <body>
 
-<h1>Welcome to Budget Buddy!</h1>
+<h1>Welcome, Buddy!</h1>
 
 <div class = "container1">
 <h2>Your Trips:</h2>
@@ -17,7 +22,7 @@
 
 <button onclick="unhiddenForm()">Create a New Trip...</button>
 
-<div id="tripForm" style="display:none" class = "container2">
+<div id="tripForm" style="display:none" class= "container2">
 
     <form name="trip_data" action="trip.html" method="post">
         <label>Trip Name:</label>
@@ -60,8 +65,7 @@
 
 <script>
     function unhiddenForm(){
-    var x = document.getElementById("tripForm");
-    x.style.display = "block";
+        document.getElementById("tripForm").style.display = 'block';
     }
 </script>
 
