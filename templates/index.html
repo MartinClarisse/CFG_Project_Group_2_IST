@@ -13,7 +13,69 @@
         Stay Relaxed,<br>
             Stay Friends.” </h2>
 
+<button onclick="loginForm()">Login</button>
 
+<div id="loginMessage" style="display:none" class = "message1">Please login, with your new credentials</div>
+
+<div id="loginForm" style="display:none" class = "container2">
+
+    <form name="login_data" action="dashboard.html" method="post">
+        <label>Your Username:</label>
+            <br>
+        <input type="text" name="user_name">
+            <br><br>
+        <label>Your Password:</label>
+            <br>
+        <input type="password" name="password">
+            <br><br>
+        <input type="submit" value="submit">
+
+    </form>
+
+</div>
+
+
+<button onclick="accountForm()">Create Account</button>
+
+<div id="accountForm" style="display:none" class = "container2">
+
+    <form name="account_data" action="javascript:;" onsubmit="loginForm();hideForm();" method="post">
+        <label>Enter a username:</label>
+            <br>
+        <input type="text" name="user_name">
+            <br><br>
+        <label>Enter your name:</label>
+            <br>
+        <input type="text" name="friend_name">
+            <br><br>
+        <label>Enter your email address:</label>
+            <br>
+        <input type="email" name="friend_email">
+            <br><br>
+        <label>Enter a password:</label>
+            <br>
+        <input type="password" name="password">
+            <br><br>
+        <input type="submit" value="submit">
+
+    </form>
+
+</div>
+
+<script>
+    function loginForm(){
+        document.getElementById("loginForm").style.display = 'block';
+    }
+
+    function accountForm(){
+        document.getElementById("accountForm").style.display = 'block';
+    }
+
+    function hideForm() {
+        document.getElementById("accountForm").style.display = 'none';
+        document.getElementById("loginMessage").style.display = 'block';
+    }
+</script>
 
 
 
