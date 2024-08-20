@@ -71,3 +71,24 @@ form{
     justify-content: center;
 }
 
+.dashboard-table{
+  object-position: center;
+  justify: center;
+  margin: auto;
+  background-color: #6feef2;
+  color: 1345a6;
+  border-radius: .4em;
+  overflow: hidden;
+  width: 50%;
+  tr {
+    border-color: lighten(#34495E, 10%);
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  th, td {
+    color: 1345a6;
+    text-align: left;
+    margin: .5em 1em;
+  }
+}
+
