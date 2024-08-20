@@ -7,17 +7,23 @@
 </head>
 <body>
 
+<!--Company branding and tagline.-->
+
 <h1>Budget Buddy!</h1>
 <br>
 <h2>“Stay Organised,<br>
         Stay Relaxed,<br>
             Stay Friends.” </h2>
 
+<!--Login button and hidden form, button onclick displays the form for input of authentication details.-->
+
 <button onclick="loginForm()">Login</button>
 
 <div id="loginMessage" style="display:none" class = "message1">Please login, with your new credentials</div>
 
 <div id="loginForm" style="display:none" class = "container2">
+
+<!--Navigation to the dashboard page on submission of the form.-->
 
     <form name="login_data" action="dashboard.html" method="post">
         <label>Your Username:</label>
@@ -34,6 +40,7 @@
 
 </div>
 
+<!--Create Account button and hidden form, button onclick displays the form for input of new user details.-->
 
 <button onclick="accountForm()">Create Account</button>
 
@@ -61,6 +68,8 @@
     </form>
 
 </div>
+
+<!--JS functions to display/hide the forms as required.-->
 
 <script>
     function loginForm(){
