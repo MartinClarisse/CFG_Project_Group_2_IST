@@ -71,7 +71,7 @@ form{
     justify-content: center;
 }
 
-.dashboard-table{
+table{
   object-position: center;
   justify: center;
   margin: auto;
@@ -80,15 +80,12 @@ form{
   border-radius: .4em;
   overflow: hidden;
   width: 50%;
-  tr {
-    border-color: lighten(#34495E, 10%);
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-  }
-  th, td {
-    color: 1345a6;
-    text-align: left;
-    margin: .5em 1em;
-  }
+  justify-content: center;
 }
+
+tr:nth-child(even) {background-color: #D6EEEE;}
+
+tr:hover {background-color: #e6fc65;}
+
+td{text-align: center;}
 
