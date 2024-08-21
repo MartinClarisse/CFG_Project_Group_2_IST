@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Buddy</title>
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+
+<!--Navigation link, returns user to the index page.-->
+
+<div class="top_nav">
+  <a class="active" href="index.html">Logout</a>
+</div>
+
+<body>
+
+<h1>Welcome, Buddy!</h1>
+
+<h2>Your trips:</h2>
+
+<!--Table to display a summary of the trips, stored in the database.-->
+<!--Hyperlinks added to each trip name, to navigate to the trip details page.-->
+
+<div class = "container1">
+
+<table class="dashboard-table">
+  <tr>
+    <th>Trip Name</th>
+    <th>Start Date</th>
+    <th>Countdown</th>
+    <th>Number in Group</th>
+    <th>Total Costs</th>
+    <th>Total Contributions</th>
+  </tr>
+  <tr>
+    <td data-th="Trip Name"><a class="active" href="trip.html">City Break</a></td>
+    <td data-th="Start Date">2024-10-24</td>
+    <td data-th="Countdown to start">n Days</td>
+    <td data-th="Number in Group">4</td>
+    <td data-th="Total Costs">£460</td>
+    <td data-th="Total Contributions">£350</td>
+  </tr>
+  <tr>
+    <td data-th="Trip Name"><a class="active" href="trip.html">Beach Holiday</a></td>
+    <td data-th="Start Date">2025-08-06</td>
+    <td data-th="Countdown to start">n Days</td>
+    <td data-th="Number in Group">2</td>
+    <td data-th="Total Costs">£600</td>
+    <td data-th="Total Contributions">£200</td>
+  </tr>
+  <tr>
+    <td data-th="Trip Name"><a class="active" href="trip.html">Ski Trip</a></td>
+    <td data-th="Start Date">2024-11-17</td>
+    <td data-th="Countdown to start">n Days</td>
+    <td data-th="Number in Group">4</td>
+    <td data-th="Total Costs">£800</td>
+    <td data-th="Total Contributions">£540</td>
+  </tr>
+</table>
+
+
+</div>
+
+<!--Create new trip button and hidden form, button onclick displays the form for input of new trip details.-->
+
+<button onclick="unhiddenForm()">Create a New Trip...</button>
+
+<div id="tripForm" style="display:none" class= "container2">
+
+<!--Navigation to the trip details page, on submission of the form.-->
+
+    <form name="trip_data" action="trip.html" method="post">
+        <label>Trip Name:</label>
+            <br>
+        <input type="text" name="trip_name">
+            <br><br>
+        <label>Start Date:</label>
+            <br>
+        <input type="date" name="start_date">
+            <br><br>
+        <label>Number of Group Members:</label>
+            <br>
+        <input type="number" name="group_size">
+            <br><br>
+        <label>Flights Total:</label>
+            <br>
+        <input type="number" name="flights_total">
+            <br><br>
+        <label>Accommodation Total:</label>
+            <br>
+        <input type="number" name="accommodation_total">
+            <br><br>
+        <label>Transfers Total:</label>
+            <br>
+        <input type="number" name="transfers_total">
+            <br><br>
+        <label>Activities Total:</label>
+            <br>
+        <input type="number" name="activities_total">
+            <br><br>
+        <label>Miscellaneous Costs Total:</label>
+            <br>
+        <input type="number" name="miscellaneous_total">
+            <br><br>
+        <input type="submit" value="submit">
+
+    </form>
+
+</div>
+
+<!--JS function to display the form on button click.-->
+
+<script>
+    function unhiddenForm(){
+        document.getElementById("tripForm").style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../static/main.css">
 </head>
 
+<!--Navigation link, returns user to the dashboard page.-->
+
 <div class="top_nav">
   <a class="active" href="dashboard.html">Return to Dashboard</a>
 </div>
@@ -14,14 +16,10 @@
 
 <h1>Tell us who's going and what they've paid...</h1>
 
-
 <div class = "container2">
 
-    <script>
-    function restFunction() {
-  document.getElementById("myForm").reset();
-}
-</script>
+<!--Form to input group member details and their contributions.-->
+<!--Form fields reset on submission, so additional contributions can be inserted.-->
 
 <form name="friends_data" method="post">
         <label>Friend's Name:</label>
@@ -41,6 +39,13 @@
         <input type="submit" onclick="resetFunction()" value="submit">
 </form>
 
+<!--JS function to reset form.-->
+
+<script>
+    function resetFunction() {
+    document.getElementById("friends_data").reset();
+    }
+</script>
 
 
 </div>
