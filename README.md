@@ -1,9 +1,10 @@
 # GROUP 2 - CFG PROJECT 
 ## What Are We Building?
 We're creating an innovative travel and budgeting website to help travellers plan their trips more efficiently and economically, including a feature that automatically calculates and distributes shared expenses among travel group members. Our platform combines comprehensive trip planning tools with excellent usability, allowing users to explore new destinations without worrying about budgeting group expenses. 
+The front-end uses HTML templates and CSS, and it's connected to python through flask, and all the data is stored on a SQL database through mysql.connector. 
 
-## How We're Staying Organised: 
-Please look at the audit txt file to see a log of all our group discussions. 
+### How We're Staying Organised: 
+Please look at the "audit.txt" file in the "Documentation" folder to see a log of all our group discussions minutes. 
 Our group is formed of Chahat, Jessie and Clarisse. 
 
 FOR GROUP MEMBERS: 
@@ -11,18 +12,24 @@ FOR GROUP MEMBERS:
 - [Trello Board](https://trello.com/b/lOTyUoyc/group-2-project-summer-2024)
 - [Activity Log](https://docs.google.com/spreadsheets/d/1U19rlQ5pdbvJYFSjDR26frguT8dG1hwsKwFKL4zfbNI/edit?gid=1877883424#gid=1877883424)
   
-WEEKLY OBJECTIVES:
+## Follow Along:
 
-Before Friday
-- (CHAHAT) Create Database and push to branch. Create pull request to main branch.
-- (CLARISSE) Branch main to create basic python console and API to SQL database.
-- (JESSIE) Branch main to create HTML scripts.
+### Visualising the Code:
+To familiarise yourself with the technical architecture, please look at the "Visualising the Code" folder.
+Here you can find:
+- A visual map of the code.
+- The handout assignment of the course.
 
-Friday's Agenda
-- Breakdown python programming.
-- Discuss how to implement testing and exceptions handling.
-- Assign coding work between group.
-- Review overarching objectives and timeframes.
+### How to Install and Run Project: 
+For relevant dependencies:
+- Begin by checking the requirements.txt file.
+To run the project:
+- Run the script from "Creating SQL Database.sql" from the "SQL_files" folder in mySQL first to initalise the schema and populate the 'dud' value. 
+- Clone all of the website folder files to your local device.
+- Open the website repository folder in Pycharm.
+- Ensure you have have installed the relevant dependencies within this directory.
+- Run the app.py file.
+- Follow the URL provided and navigate the web application.  
 
 ## Group Milestones: 
 - [x] Submitted Group Assignment 02/08/2024. 
