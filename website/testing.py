@@ -5,8 +5,8 @@
 # from unittest import mock, main, TestCase
 # from main import handshakes
 #
-# # TESTING THAT THE HANDSHAKE FUNCTION WORKS
-#
+# TESTING THAT THE HANDSHAKE FUNCTION WORKS
+
 # class TestHandshakes(TestCase):
 #
 #     def test_1_person(self):

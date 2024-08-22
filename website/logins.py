@@ -55,7 +55,7 @@ else:
     print("Password does not match")
 
 # ------------------------------------------------------------
-# Sending new user variables into the SQL database. 
+# Sending new user variables into the SQL database.
 class User:
     def __init__(self, name, email, username, password):
         self.name = name
