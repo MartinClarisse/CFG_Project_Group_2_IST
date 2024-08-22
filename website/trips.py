@@ -1,60 +1,108 @@
-class Trips:
-    def __init__ (self, trip_id, trip_name, start_date, flights_total, accomodation_total, transfers_total, activities_total, miscellaneous_total):
+from db import query_db, insert_db
+import datetime
 
+# ------------------------------------------------------------
+class Enter_trip:
+    # Initialising the class with all the values from Trips and Costs Tables.
+    def __init__(self, trip_name, start_date, group_size, member_id, flights_total, accomodation_total, transfers_total,
+                 activities_total, miscellaneous_total):
+        self.trip_name = trip_name
+        self.start_date = start_date
+        self.group_size = group_size
+        self.member_id = member_id
+        self.flights_total = flights_total
+        self.accomodation_total = accomodation_total
+        self.transfers_total = transfers_total
+        self.activities_total = activities_total
+        self.miscellaneous_total = miscellaneous_total
 
-    def check_user_exists(self):
-        query = "SELECT * FROM  Authentication WHERE username = %s" # Used args instead of f string to avoid SQL injection attacks
-        args = (self.user_name,)
-        results = query_db(query, args)
-        return bool(results) # better than if clause for True or False
-
-    def check_password_match(self):
-        hashed_password = hashlib.md5(self.password.encode()).hexdigest() # This matches the encryption which happens when a user is created with the query.
-        query = "SELECT * FROM  Authentication WHERE username = %s AND PWD = %s"
-        args = (self.user_name, hashed_password,)
-        results = query_db(query, args)
-        return bool(results)
-
-
-class User:
-    def __init__(self, name, email, username, password):
-        self.name = name
-        self.email = email
-        self.username = username
-        self.password = password
-    def insert_member_details(self):
-        insert = "INSERT INTO Member_Details (member_name, email) VALUES (%s, %s)"
-        args = (self.name, self.email)
+    def create_trip(self):
+        insert = "INSERT INTO Trips (trip_name, start_date, group_size, member_id) VALUES (%s, %s, %s, %s);"
+        args = (self.trip_name, self.start_date, self.group_size, self.member_id)
         rows_affected = insert_db(insert, args)
         return rows_affected
 
-    def insert_authentication_details(self):
-        query = "SELECT member_id FROM Member_details WHERE member_name = %s"
-        args = (self.name,)
+    def add_costs(self):
+        # Fetching the trip_id as it's the FK
+        query = "SELECT trip_id FROM Trips WHERE trip_name = %s;"
+        args = (self.trip_name,)
         result = query_db(query, args)
-        member_id = result[0][0]
-        insert = "INSERT INTO Authentication (username, member_id, PWD)VALUES (%s,%s,md5(%s));"
-        args = (self.username, member_id, self.password,)
+        trip_id = result[0][0]
+        # Inserting Costs
+        insert = "INSERT INTO Costs (trip_id, flights_total, accomodation_total, transfers_total, activities_total, miscellaneous_total) VALUES (%s, %s, %s, %s, %s, %s);"
+        args = (trip_id, self.flights_total, self.accomodation_total, self.transfers_total, self.activities_total,
+                self.miscellaneous_total)
         rows_affected = insert_db(insert, args)
         return rows_affected
 
-# 'Testing' the Class to make sure authentication works properly'
-# Rather than this, this would need to then use the boolean values in if statements on view to determine wether to move on to dashboard or raise error.
 
+# 'Testing' the Class to make sure creating trips and adding costs work properly.
+# Again, this can be moved to the testing file and put in a proper Test Class.
 
-# name = 'Rachel Green'
-# email = 'rachel.green@gmail.com'
-# username = 'rachelg'
-# password = 'centralperk'
+# trip_name = 'Bahamas'
+# start_date = datetime.date(2024, 1, 1)
+# group_size = 2
+# member_id = 2
+# flights_total = 500
+# accomodation_total = 600
+# transfers_total = 100
+# activities_total = 300
+# miscellaneous_total = 150
 #
-# user1 = User(name, email, username,password)
-# user1.insert_member_details()
-# user1.insert_authentication_details()
+# trip1 = Enter_trip(trip_name, start_date, group_size, member_id, flights_total, accomodation_total, transfers_total,
+#              activities_total, miscellaneous_total)
+#
+# trip1.create_trip()
+# trip1.add_costs()
 
-query1 = "SELECT * FROM Member_details;"
+query1 = "SELECT * FROM Trips;"
 results = query_db(query1)
 print(results)
 
-query2 = "SELECT * FROM Authentication;"
+query2 = "SELECT * FROM Costs;"
 results = query_db(query2)
 print(results)
+
+# ------------------------------------------------------------
+
+class View_trips:
+    # These are the only variables to be inputted into the queries, the rest of the values get pulled
+    def __init__(self, member_id):
+        self.member_id = member_id
+
+    def view_trip(self):
+        query = "SELECT trip_name FROM Trips WHERE member_id = %s;"
+        args = (self.member_id,)
+        trips = query_db(query, args)
+        return trips
+
+
+# 'Testing' the Class to make sure you can see all trip names from member_id being passed in.
+# Again, this can be moved to the testing file and put in a proper Test Class.
+
+member_id = '2'
+member_trips1 = View_trips(member_id)
+trips = member_trips1.view_trip()
+print(trips)
+
+
+# ------------------------------------------------------------
+
+
+class View_costs:
+    def __init__(self, trip_id):
+        self.trip_id = trip_id
+    def view_costs(self):
+        query = "SELECT * FROM Costs WHERE trip_id = %s;"
+        args = (self.trip_id,)
+        costs = query_db(query, args)
+        return costs
+
+
+# 'Testing' the Class to make sure fetching trip info works.
+# Again, this can be moved to the testing file and put in a proper Test Class.
+
+trip_id = '2'
+trip1 = View_costs(member_id)
+costs = trip1.view_costs()
+print(costs)
