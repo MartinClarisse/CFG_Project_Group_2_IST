@@ -35,3 +35,25 @@ def query_db(query, args=()):
 # results = query_db(query)
 # print(results)
 
+# ------------------------------------------------------------
+def insert_db(insert, args=(), commit=True):
+    db = get_db()
+    cursor = db.cursor()
+
+    try:
+        cursor.execute(insert, args)
+
+        if commit:
+            db.commit()
+            return cursor.rowcount  # Return the number of affected rows for INSERT, UPDATE, DELETE
+
+        # For SELECT queries, fetch results
+        return cursor.fetchall()
+
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return None
+
+    finally:
+        cursor.close()
+        db.close()
