@@ -33,6 +33,7 @@ To run the project:
 - Run the script from "Creating SQL Database.sql" from the "SQL_files" folder in mySQL first to initalise the schema and populate the 'dud' value. 
 - Clone all of the website folder files to your local device.
 - Open the website repository folder in Pycharm.
+- NB: Please make sure to edit the "db.py" file to update the passwd to your mySQL password for the connection to work. 
 - Ensure you have have installed the relevant dependencies within this directory.
 - Run the app.py file.
 - Follow the URL provided and navigate the web application.  
