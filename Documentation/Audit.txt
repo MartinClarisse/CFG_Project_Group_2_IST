@@ -205,5 +205,42 @@ Before Friday:
 
 --------------------------------------------------------------------------
 
-16/08/2024
+Friday Group Meeting cancelled all working solo. 
+Tuesday Group Meeting postponed to Wednesday as Clarisse was poorly. 
 
+--------------------------------------------------------------------------
+
+21/08/2024
+
+Jessie demoed HTML templates.
+Group discussed layout of python files. 
+Jessie to finish keep working on HTML templates, Clarisse the python, and Chahat to test. 
+
+
+--------------------------------------------------------------------------
+
+22/08/2024
+
+Wednesday Group Meeting
+
+Panic over flask connection to html templates... 
+
+Clarisse was able to get the connection working for rendering the templates through routes, and the connection to the SQL database. The issue is with taking in the inputs and moving between pages.
+
+Group all debugged the code together. Realised the action="dashboard.html" may be part of the issue. When changed to a route the error changed from not found to method not available. When changed to "." it seemed to post the results, but this now needs to be passed through the python to the relevant functions through the route and then redirect the page.
+
+
+Plan of action: 
+
+- Clarisse to make classes and functions for the relevant dashboard and trips inputs/outputs within the console. 
+- Chahat to make test class to test the functions. Then to try and get the problem above working. 
+- Jessie to amend HTML to take in the SQL data from functions. Jessie will also look into method error on the webapp. 
+
+
+Tomorrow: 
+
+- 10am(BST), 2:30(IST) meeting with Sophia to debug and get the webapp working. 
+
+--------------------------------------------------------------------------
+
+23/08/2024
