@@ -78,3 +78,24 @@ INSERT INTO Contributions (trip_id, member_id)VALUES
     
     -- Making sure the table has correctly been created. 
 SELECT * FROM Contributions;
+
+-- -----------------------------------------------
+
+-- Creating next table; Authentication 
+
+CREATE TABLE Authentication(
+username VARCHAR(50) PRIMARY KEY, 
+member_id INT NOT NULL,
+PWD VARBINARY(255),
+FOREIGN KEY (member_id) REFERENCES Member_Details(member_id)
+);
+
+INSERT INTO Authentication (username, member_id, PWD)VALUES
+	('thedud','1',md5('password'));
+    
+
+    -- Making sure the table has correctly been created. 
+SELECT * FROM Authentication;
+
+-- Testing that the password can be retrieved for the webapp. 
+SELECT * FROM Authentication WHERE PWD=md5('password');
