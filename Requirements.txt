@@ -1,2 +1,0 @@
-* Include version of MySQL and Pycharm
-* Include any imports and installs 

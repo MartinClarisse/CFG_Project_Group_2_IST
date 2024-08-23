@@ -18,48 +18,49 @@
 
 <h2>Your trips:</h2>
 
-<!--Table to display a summary of the trips, returned from the database.-->
+<!--Table to display a summary of the trips, stored in the database.-->
 <!--Hyperlinks added to each trip name, to navigate to the trip details page.-->
 
 <div class = "container1">
 
-<table id ="dashboard-table">
-    <tr>
-        <th>Trip Name</th>
-        <th>Start Date</th>
-        <th>Countdown</th>
-        <th>Number in Group</th>
-        <th>Total Costs</th>
-        <th>Total Contributions</th>
-    </tr>
-    <tr>
-        <td data-th="Trip Name"><a class="active" href="trip.html">City Break</a></td>
-        <td data-th="Start Date">2024-10-24</td>
-        <td data-th="Countdown to start">n Days</td>
-        <td data-th="Number in Group">4</td>
-        <td data-th="Total Costs">£460</td>
-        <td data-th="Total Contributions">£350</td>
-    </tr>
-    <tr>
-        <td data-th="Trip Name"><a class="active" href="trip.html">Beach Holiday</a></td>
-        <td data-th="Start Date">2025-08-06</td>
-        <td data-th="Countdown to start">n Days</td>
-        <td data-th="Number in Group">2</td>
-        <td data-th="Total Costs">£600</td>
-        <td data-th="Total Contributions">£200</td>
-    </tr>
-    <tr>
-        <td data-th="Trip Name"><a class="active" href="trip.html">Ski Trip</a></td>
-        <td data-th="Start Date">2024-11-17</td>
-        <td data-th="Countdown to start">n Days</td>
-        <td data-th="Number in Group">4</td>
-        <td data-th="Total Costs">£800</td>
-        <td data-th="Total Contributions">£540</td>
-    </tr>
+<table class="dashboard-table">
+  <tr>
+    <th>Trip Name</th>
+    <th>Start Date</th>
+    <th>Countdown</th>
+    <th>Number in Group</th>
+    <th>Total Costs</th>
+    <th>Total Contributions</th>
+  </tr>
+  <tr>
+    <td data-th="Trip Name"><a class="active" href="trip.html">City Break</a></td>
+    <td data-th="Start Date">2024-10-24</td>
+    <td data-th="Countdown to start">n Days</td>
+    <td data-th="Number in Group">4</td>
+    <td data-th="Total Costs">£460</td>
+    <td data-th="Total Contributions">£350</td>
+  </tr>
+  <tr>
+    <td data-th="Trip Name"><a class="active" href="trip.html">Beach Holiday</a></td>
+    <td data-th="Start Date">2025-08-06</td>
+    <td data-th="Countdown to start">n Days</td>
+    <td data-th="Number in Group">2</td>
+    <td data-th="Total Costs">£600</td>
+    <td data-th="Total Contributions">£200</td>
+  </tr>
+  <tr>
+    <td data-th="Trip Name"><a class="active" href="trip.html">Ski Trip</a></td>
+    <td data-th="Start Date">2024-11-17</td>
+    <td data-th="Countdown to start">n Days</td>
+    <td data-th="Number in Group">4</td>
+    <td data-th="Total Costs">£800</td>
+    <td data-th="Total Contributions">£540</td>
+  </tr>
 </table>
 
+
 </div>
-<br>
+
 <!--Create new trip button and hidden form, button onclick displays the form for input of new trip details.-->
 
 <button onclick="unhiddenForm()">Create a New Trip...</button>
@@ -68,7 +69,7 @@
 
 <!--Navigation to the trip details page, on submission of the form.-->
 
-    <form name="trip_data" action="trip.html" method="post">
+    <form name="trip_data" action="." method="post">
         <label>Trip Name:</label>
             <br>
         <input type="text" name="trip_name">
