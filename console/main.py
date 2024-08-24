@@ -1,4 +1,6 @@
-from index import welcome
+from index import index
+from dashboard import dashboard
+from trips import trips
 
 # ------------------------------------------------------------
 # ❗IMPORTANT:
@@ -13,10 +15,11 @@ from index import welcome
 # ------------------------------------------------------------
 
 # THE CORE FUNCTIONS
+# These are the central function for each of the equivalent HTML templates - python file substitutes.
+def run_console():
+    index()
+    dashboard()
+    trips()
 
-# # SIMULATING THE INDEX
-welcome()
-# # SIMULATING THE DASHBOARD
-# #dashboard()
-# # SIMULATING THE TRIPS PAGE
-# #trips()
+
+run_console()

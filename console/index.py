@@ -1,3 +1,4 @@
+# imports from the files within the directory.
 from logins_sql import Authentication, User
 
 # ------------------------------------------------------------
@@ -6,7 +7,7 @@ from logins_sql import Authentication, User
 # This is the function that is run on the main.py.
 # ------------------------------------------------------------
 
-def welcome():
+def index():
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("""
     \n👋 Welcome to BudgetBuddy \n
@@ -60,7 +61,7 @@ def login():
     authenticate = Authentication(username, password)
     # Checking if the user exists
     if authenticate.check_user_exists():
-        print("Username success.")
+        print("Username success.\n")
     else:
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print("\n⚠️ Username does not exist.")
@@ -68,6 +69,7 @@ def login():
     # Checking if the password matches
     if authenticate.check_password_match(): # this function returns a boolean value.
         member_id = authenticate.retrieve_member_id()
+        # Back-end workaround, storing member_id to file to have retrievable session reference (would use sessions from flask in webapp to do this)
         session_user_file = open('session_user.txt','w')  # w replaces text so it means the session user is resubmitted every time the function logs in.
         session_user_file.write(f'{member_id}')  # store the member_id so the dashboard has an easy reference to call.
         session_user_file.close()
@@ -84,7 +86,7 @@ def retry_login():
 
     while True:
 
-        retry_login = input("Would you like to to try again? ('Y' or 'N'): ").upper()
+        retry_login = input("\nWould you like to to try again? ('Y' or 'N'): ").upper()
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
         if retry_login == 'Y' or retry_login == 'YES':
@@ -93,7 +95,7 @@ def retry_login():
 
         elif retry_login == 'N' or retry_login == 'NO':
             print("\n No problem, we'll take you back to the homepage.")
-            welcome()
+            index()
             break
 
         else:
@@ -101,11 +103,6 @@ def retry_login():
             print("\n⚠️ Oh no! I don't recognise your answer.")
             print("Please only enter the letter 'Y' or 'N' to proceed.")
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
-# ------------------------------------------------------------
-# Back-end workaround, storing member_id to file to have retrievable session reference (would use sessions from flask in webapp to do this)
-
-
 
 # ------------------------------------------------------------
 
@@ -121,7 +118,7 @@ def create_account():
     while True:
         try:
             # Getting and validating member name
-            member_name = input("Please enter your name: ").casefold()
+            member_name = input("Please enter your name: ")
             if not member_name:
                 raise ValueError("Name cannot be empty.")
 
@@ -131,7 +128,7 @@ def create_account():
                 raise ValueError("Email cannot be empty.")
 
             # You would also need to get the username and password from the user
-            username = input("Please enter a username: ").strip()
+            username = input("Please enter a username: ").casefold()
             if not username:
                 raise ValueError("Username cannot be empty.")
 
@@ -166,4 +163,4 @@ def create_account():
 
 
     # call back the start of the 'index/homepage' so user has a chance to log in.
-    welcome()
+
