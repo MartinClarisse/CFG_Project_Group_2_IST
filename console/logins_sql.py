@@ -19,14 +19,14 @@ class Authentication:
         self.password = password
 
     def check_user_exists(self):
-        query = "SELECT * FROM  Authentication WHERE username = %s;" # Used args instead of f string to avoid SQL injection attacks
+        query = "SELECT * FROM Authentication WHERE username = %s;" # Used args instead of f string to avoid SQL injection attacks
         args = (self.username,)
         results = query_db(query, args)
         return bool(results) # better than if clause for True or False
 
     def check_password_match(self):
         hashed_password = hashlib.md5(self.password.encode()).hexdigest() # This matches the encryption which happens when a user is created with the query.
-        query = "SELECT * FROM  Authentication WHERE username = %s AND PWD = %s;"
+        query = "SELECT * FROM Authentication WHERE username = %s AND PWD = %s;"
         args = (self.username, hashed_password,)
         results = query_db(query, args)
         return bool(results)
