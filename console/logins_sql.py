@@ -50,6 +50,18 @@ class User:
         self.email = email
         self.username = username
         self.password = password
+
+    def check_unique_email(self):
+        query = "SELECT * FROM Member_Details WHERE email = %s;"
+        args = (self.email,)
+        result = query_db(query,args)
+        return result
+
+    def check_unique_username(self):
+        query = "SELECT * FROM Member_Details WHERE member_name = %s;"
+        args = (self.name,)
+        result = query_db(query,args)
+        return result
     def insert_member_details(self):
         insert = "INSERT INTO Member_Details (member_name, email) VALUES (%s, %s);"
         args = (self.name, self.email)
