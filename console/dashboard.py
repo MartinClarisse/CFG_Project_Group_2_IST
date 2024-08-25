@@ -14,12 +14,12 @@ from trips import trip
 # >> DASHBOARD FUNCTION <<
 # This serves as the placeholder for the welcome page.
 # This is the function that is run on the main.py.
-# The user arrives at this page after a successful log in in dashboard sends them back to main, and this function is triggered.
+# The user arrives at this page after a successful login in dashboard sends them back to main, and this function is triggered.
 # ------------------------------------------------------------
 def dashboard():
 
     # Retrieving the 'session' member_id from the file to pass to SQL to load session dashboard.
-    session_user_file = open('session_user.txt','r') #retreiving the session user id which is common across all the tan;
+    session_user_file = open('session_user.txt','r') #retrieving the session user id which is common across all the code;
     member_id = session_user_file.read()
     session_user_file.close()
 
@@ -48,8 +48,8 @@ def dashboard():
 
 
     else:
-        print("😔 You haven't currently got any trips registered yet....\n")
-        # ASking user if they want to add a new trip.
+        print("😔 You haven't got any trips registered yet....\n")
+        # Asking user if they want to add a new trip.
         prompt_new_trip()
 
     # End of core function, the code will have moved on to the following 'routes' below.
@@ -100,11 +100,11 @@ def prompt_new_trip():
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 
 # ------------------------------------------------------------
-# Function which takes in input variables from user to insert into SQL database.
+# Function which takes input variables from user, to insert into SQL database.
 def new_trip():
 
     # Pulling user_id again, needed for the table.
-    session_user_file = open('session_user.txt','r')  # retreiving the session user id which is common across all the tan;
+    session_user_file = open('session_user.txt','r')  # retrieving the session user id which is common across all the code;
     member_id = session_user_file.read()
     session_user_file.close()
 
@@ -138,7 +138,7 @@ def new_trip():
     while True:
         try:
             # Getting and validating group size
-            group_size = input("Please enter the group size (must be an integer): ").strip()
+            group_size = input("Please enter the group size (must be a whole number): ").strip()
             group_size = int(group_size)  # Convert input to integer
 
             if not group_size:
@@ -150,7 +150,7 @@ def new_trip():
             print(f"\n⚠️ Error: {ve}")
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
-    # The costs can all be error handled in the same block thankfully.
+    # The costs can all be error handled in the same block.
     while True:
         try:
             flights_total = input("\nPlease enter the total cost of the flights: ").strip()
@@ -158,7 +158,7 @@ def new_trip():
             if not group_size:
                 raise ValueError()
 
-            accomodation_total = input("Please enter the total cost of the accomadation: ").strip()
+            accomodation_total = input("Please enter the total cost of the accommodation: ").strip()
             accomodation_total = int(accomodation_total)
             if not group_size:
                 raise ValueError()
@@ -190,7 +190,7 @@ def new_trip():
             break
 
         except ValueError:
-            print(f"\n⚠️ Error: Costs must be entered only as integers (e.g., '200'). Please enter 0 if there is no cost.")
+            print(f"\n⚠️ Error: Costs must be entered only as whole numbers (e.g., '200'). Please enter 0 if there is no cost.")
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
     # Brings user back to their dashboard/homepage. They will be able to see their new trip added to their trip list when it brings them back.
@@ -237,13 +237,13 @@ def logout():
         logout = input("> Would you like to log out of your account? ('Y' or 'N'): ").upper()
 
         if logout == 'Y' or logout == 'YES':
-            print("\nThank you for logging in. See you next time! ✈️")
-            # Finally, send user back to the first function from the index. This is to serve back as an almost hyperlink.
+            print("\nThank you. See you next time! ✈️")
+            # Finally, send user back to the first function from the index. This is to serve as an almost hyperlink.
             index()
             break
 
         elif logout == 'N' or logout == 'NO':
-            dashboard() # Call the top of this 'webpage' again so user can view deshboard, add trip, or select to go to trips page.
+            dashboard() # Call the top of this 'webpage' again so user can view dashboard, add trip, or select to go to trips page.
             break
 
         else:
