@@ -72,14 +72,18 @@ def trip():
     print(f"The total group costs for your trip come to: {total_costs}")
     print(f"This comes to {individual_cost} per person.")
     print(f"You have {remaining_contribution} left to pay.")
-    prompt_costs_overview()
 
-
-# ------------------------------------------------------------
-# Costs overview functions
-def prompt_costs_overview():
-    print("cost overview prompt placeholder")
+    # Giving user the chance to add a contribution.
     prompt_add_contribtion()
+
+
+# # ------------------------------------------------------------
+
+# Here we planned to have a breakdown of costs, including using matplotlib for a pie chart.
+# # Costs overview functions
+# def prompt_costs_overview():
+#     print("cost overview prompt placeholder")
+#     prompt_add_contribtion()
 
 
 # ------------------------------------------------------------
@@ -133,13 +137,36 @@ def add_contribution():
 
         except ValueError:
             print(
-                f"\n⚠️ Error: Contribution must be entered only as integers (e.g., '200'). Please enter 0 if there is no new contribution.")
+                f"\n⚠️ Error: Contribution must be entered only as an integer (e.g., '200'). Please enter 0 if there is no new contribution.")
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     trip()
 
 
 # ------------------------------------------------------------
 # Ending trip 'session' and returning to user dashboard.
-
 def exit_trip():
-    print("this is a placehoder to exit trip page")
+
+    while True:
+        exit_trip = input("> Would you like to exit this trip view? ('Y' or 'N'): ").upper()
+
+        if exit_trip == 'Y' or exit_trip == 'YES':
+            print("\nThank you for logging in. See you next time! ✈️")
+            # End 'session' for trip by deleting their member_id from session file.
+            # This is just for good practice as each time the login functions runs the 'w' functions overrides the trip_id anyway.
+            session_trip_file = open('session_trip.txt','w')  # retreiving the session trip_id
+            session_trip_file.truncate()
+            session_trip_file.close()
+            # Finally, send user back to the first function from the trip. This is to serve back as an almost hyperlink.
+            dashboard()
+            break
+
+        elif exit_trip == 'N' or exit_trip == 'NO':
+            trip() # Call the top of this 'webpage' again so user can view deshboard, add trip, or select to go to trips page.
+            break
+
+        else:
+            # Input error handling using while loop, error doesn't break console running.
+            print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("\n⚠️ Oh no! I don't recognise your answer.")
+            print("Please only enter the letter 'Y' or 'N' to proceed.")
+            print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
