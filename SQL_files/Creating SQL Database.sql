@@ -1,5 +1,4 @@
 -- Creating the database
-DROP DATABASE budgetbuddy;
 
 CREATE DATABASE IF NOT EXISTS BudgetBuddy; 
 

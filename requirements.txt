@@ -9,6 +9,5 @@ Installs:
 pip install mysql.connector
 pip install --upgrade mysql-connector-python
 pip install pandas
-pip install pandasql
 
 

@@ -1,4 +1,4 @@
-VERY SIMPLE OVERVIEW: 
+VERY SIMPLE OVERVIEW OF WEBAPP/SQL LAYOUT: 
 
 ----------------------------------
 
@@ -18,15 +18,8 @@ Dashbard (user)
 
 Database Tables:
 
-Trips 
 Member_Details 
+Authentication
+Trips
 Costs
-Contributions 
-Authentication 
-
-----------------------------------
-
-Things to consider: 
-
-Testing 
-Email Triggers for hitting milestones. 
+Contributions  
