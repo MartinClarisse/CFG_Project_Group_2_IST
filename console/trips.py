@@ -15,19 +15,20 @@ from db import query_db
 # The user arrives at this page after a successful log in in dashboard sends them back to main, and this function is triggered.
 # ------------------------------------------------------------
 
-# Retrieve 'session' user
-session_user_file = open('session_user.txt', 'r')  # retreiving the session user id which is common across all the tan;
-member_id = session_user_file.read()
-session_user_file.close()
 
-# Retrieve 'session' trip
-session_trip_file = open('session_trip.txt', 'r')  # retreiving the session user id which is common across all the tan;
-trip_id = session_trip_file.read()
-session_trip_file.close()
 
 # ------------------------------------------------------------
 # START OF CORE FUNCTION
 def trip():
+    # Retrieve 'session' user
+    session_user_file = open('session_user.txt','r')  # retreiving the session user id which is common across all the tan;
+    member_id = session_user_file.read()
+    session_user_file.close()
+
+    # Retrieve 'session' trip
+    session_trip_file = open('session_trip.txt','r')  # retreiving the session user id which is common across all the tan;
+    trip_id = session_trip_file.read()
+    session_trip_file.close()
     # Querying db for total costs and contribution
     # These variables are fixed so it they don't need to be repeated in recursive functions.
     query = "SELECT trip_name FROM Trips WHERE member_id = %s and trip_id = %s;"
@@ -46,7 +47,7 @@ def trip():
     group_size = result[0][0]
 
     # Using the member_id and trip_id to pull all the Trip table variables. These will be needed in the code.
-    contribution = View_contribution(member_id, trip_id)
+    contribution = View_contribution(trip_id,member_id)
     total_contribution = contribution.view_contribution()
     total_contribution = total_contribution[0][0]
 
@@ -112,8 +113,18 @@ def add_contribution():
 
     while True:
         try:
+            # Retrieve 'session' user
+            session_user_file = open('session_user.txt','r')  # retreiving the session user id which is common across all the tan;
+            member_id = session_user_file.read()
+            session_user_file.close()
+
+            # Retrieve 'session' trip
+            session_trip_file = open('session_trip.txt','r')  # retreiving the session user id which is common across all the tan;
+            trip_id = session_trip_file.read()
+            session_trip_file.close()
+
             # fetch variables again in new function.
-            contribution = View_contribution(member_id, trip_id)
+            contribution = View_contribution(trip_id, member_id)
             total_contribution = contribution.view_contribution()
             total_contribution = total_contribution[0][0]
             # Getting user input and converting it to integer
