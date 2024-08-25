@@ -18,8 +18,7 @@ from trips import trip
 # These are the central function for each of the equivalent HTML templates - python file substitutes.
 def run_console():
     index()
-    dashboard()
-    trip()
+
 
 
 run_console()

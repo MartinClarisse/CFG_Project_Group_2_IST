@@ -7,6 +7,8 @@ from datetime import datetime
 from trips_sql import View_trips, Retrieve_trip_id, Enter_trip
 from db import query_db
 from index import index
+from trips import trip
+
 
 # ------------------------------------------------------------
 # >> DASHBOARD FUNCTION <<
@@ -214,6 +216,7 @@ def select_trip():
             session_trip_file.write(f'{trip_id}')  # stores the trip_id so the dashboard has an easy reference to call.
             session_trip_file.close()
 
+            trip()
             break
             # This break ends the code on this file, so the console is redirected to main which now calls third and final function trips.
 

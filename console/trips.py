@@ -6,7 +6,7 @@ from datetime import date
 # imports from my the directory itself.
 from trips_sql import View_trips, View_costs, View_contribution, Add_contribution
 from db import query_db
-from dashboard import dashboard
+
 
 # ------------------------------------------------------------
 # >> (INDIVIDUAL) TRIP FUNCTION <<
@@ -25,28 +25,26 @@ session_trip_file = open('session_trip.txt', 'r')  # retreiving the session user
 trip_id = session_trip_file.read()
 session_trip_file.close()
 
-# Querying db for total costs and contribution
-# These variables are fixed so it they don't need to be repeated in recursive functions.
-
-query = "SELECT trip_name FROM Trips WHERE member_id = %s and trip_id = %s;"
-args = (member_id, trip_id)
-result = query_db(query, args)
-trip_name = result[0][0]
-
-query = "SELECT start_date FROM Trips WHERE member_id = %s and trip_id = %s;"
-args = (member_id, trip_id)
-result = query_db(query, args)
-start_date = result[0][0]
-
-query = "SELECT group_size FROM Trips WHERE member_id = %s and trip_id = %s;"
-args = (member_id, trip_id)
-result = query_db(query, args)
-group_size = result[0][0]
-
-
 # ------------------------------------------------------------
 # START OF CORE FUNCTION
 def trip():
+    # Querying db for total costs and contribution
+    # These variables are fixed so it they don't need to be repeated in recursive functions.
+    query = "SELECT trip_name FROM Trips WHERE member_id = %s and trip_id = %s;"
+    args = (member_id, trip_id)
+    result = query_db(query, args)
+    trip_name = result[0][0]
+
+    query = "SELECT start_date FROM Trips WHERE member_id = %s and trip_id = %s;"
+    args = (member_id, trip_id)
+    result = query_db(query, args)
+    start_date = result[0][0]
+
+    query = "SELECT group_size FROM Trips WHERE member_id = %s and trip_id = %s;"
+    args = (member_id, trip_id)
+    result = query_db(query, args)
+    group_size = result[0][0]
+
     # Using the member_id and trip_id to pull all the Trip table variables. These will be needed in the code.
     contribution = View_contribution(member_id, trip_id)
     total_contribution = contribution.view_contribution()
@@ -145,6 +143,7 @@ def add_contribution():
 # ------------------------------------------------------------
 # Ending trip 'session' and returning to user dashboard.
 def exit_trip():
+    from dashboard import dashboard
 
     while True:
         exit_trip = input("> Would you like to exit this trip view? ('Y' or 'N'): ").upper()

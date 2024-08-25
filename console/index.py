@@ -50,6 +50,8 @@ def handling_login():
 # Login function to authenticate user.
 # This uses functions from the Authentication Class in the logins file.
 def login():
+    from dashboard import dashboard
+
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("\n ✨ Welcome back! ")
     print("\n Please enter your username, then your password. \n")
@@ -74,7 +76,7 @@ def login():
         session_user_file.write(f'{member_id}')  # store the member_id so the dashboard has an easy reference to call.
         session_user_file.close()
 
-        # code will finish running this python file here, return to main, and run the dashboard python file.
+        dashboard()
     else:
         print("⚠️ Incorrect details provided.")
         retry_login() # function which handles the login error.
