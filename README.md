@@ -23,6 +23,10 @@ Please also watch the mock data demonstration to understand the user journey thr
 
 ## Follow Along:
 
+### ❗Project Documentation
+
+Please read the 'Project Documentation' file in the 'Documentation' folder. 
+
 ### ❗Visualising the Code:
 To familiarise yourself with the technical architecture, please enter the 'Documentation' repository. in which you can view 
 Here you can find:
