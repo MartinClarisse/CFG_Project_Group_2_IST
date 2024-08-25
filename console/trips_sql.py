@@ -87,11 +87,14 @@ class View_trips:
         self.member_id = member_id
 
     def view_trip(self):
-        query = "SELECT trip_name FROM Trips WHERE member_id = %s;"
+        query = "SELECT trip_name FROM Trips WHERE member_id = %s;" # In future, should add that date is upcoming as additional filter.
         args = (self.member_id,)
         trips = query_db(query, args)
         return trips
 
+    def view_total_cost(self):
+        query = "SELECT %s, (flights_total + accomodation_total + transfers_total + miscellaneous_total) AS total_cost FROM Costs;"
+        args = (mem)
 
 # ------------------------------------------------------------
 class Retrieve_trip_id:
@@ -103,7 +106,6 @@ class Retrieve_trip_id:
         result = query_db(query, args)
         trip_id = result[0][0]
         return trip_id
-
 
 # 'Testing' the Class to make sure you can see all trip names from member_id being passed in.
 # Again, this can be moved to the testing file and put in a proper Test Class.
@@ -125,6 +127,13 @@ class View_costs:
         args = (self.trip_id,)
         costs = query_db(query, args)
         return costs
+    def view_total_cost(self):
+        query = "SELECT (flights_total + accomodation_total + transfers_total + miscellaneous_total) AS total_cost FROM Costs WHERE trip_id = %s";
+        args = (self.trip_id,)
+        total_cost = query_db(query,args)
+        return total_cost
+
+
 
 
 # 'Testing' the Class to make sure fetching trip info works.
@@ -137,7 +146,7 @@ class View_costs:
 
 # ------------------------------------------------------------
 
-class Contributions:
+class Add_contributions:
     def __init__(self, total, trip_id, member_id):
         self.trip_id = trip_id
         self.member_id = member_id
@@ -149,6 +158,13 @@ class Contributions:
         rows_affected = insert_db(insert, args)
         return rows_affected
 
+# ------------------------------------------------------------
+
+class View_contributions:
+
+    def __init__(self, trip_id, member_id):
+        self.trip_id = trip_id
+        self.member_id = member_id
     def view_contribution(self):
         query = "SELECT * FROM Contributions WHERE member_id = %s AND trip_id = %s;"
         args = (self.member_id, self.trip_id)

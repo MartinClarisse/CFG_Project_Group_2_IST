@@ -9,7 +9,7 @@ from db import query_db
 from index import index
 
 # ------------------------------------------------------------
-# >> TRIPS OVERVIEW FUNCTION <<
+# >> DASHBOARD FUNCTION <<
 # This serves as the placeholder for the welcome page.
 # This is the function that is run on the main.py.
 # The user arrives at this page after a successful log in in dashboard sends them back to main, and this function is triggered.
@@ -122,7 +122,7 @@ def new_trip():
     while True:
         try:
             # Getting and validating start date
-            start_date = input("Please enter the start (YYYY-MM-DD): ").strip()
+            start_date = input("Please enter the start (YYYY-MM-DD): ").strip() # to improve, should check to see if date is in the future.
             if not start_date:
                 raise ValueError("Start date cannot be empty.")
 

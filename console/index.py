@@ -2,7 +2,7 @@
 from logins_sql import Authentication, User
 
 # ------------------------------------------------------------
-# >> WELCOME FUNCTION <<
+# >> INDEX FUNCTION <<
 # This serves as the placeholder for the welcome page.
 # This is the function that is run on the main.py.
 # ------------------------------------------------------------
@@ -151,6 +151,7 @@ def create_account():
             user.insert_authentication_details()
 
             print("\n🎉 Account created successfully!")
+            index()
             break  # Exit the loop if account creation is successful
 
         except ValueError as ve:

@@ -1,6 +1,6 @@
 from index import index
 from dashboard import dashboard
-from trips import trips
+from trips import trip
 
 # ------------------------------------------------------------
 # ❗IMPORTANT:
@@ -19,7 +19,7 @@ from trips import trips
 def run_console():
     index()
     dashboard()
-    trips()
+    trip()
 
 
 run_console()

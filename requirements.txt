@@ -3,7 +3,7 @@ MySQL version = MySQL 8.0
 
 
 Imports:
-from datetime import datetime
+from datetime import datetime, date
 
 Installs:
 pip install mysql.connector

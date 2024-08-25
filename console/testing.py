@@ -49,7 +49,6 @@ class TestAuthentication(unittest.TestCase):
 
 
 
-# ❗NB: User needs to be removed from SQL manually after this test runs successfully.
 class TestUser(unittest.TestCase):
 
     @patch('logins_sql.insert_db')  # Mocking query data to test inserting member details into SQL.
