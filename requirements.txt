@@ -3,10 +3,11 @@ MySQL version = MySQL 8.0
 
 
 Imports:
-from Flask import Flask, Blueprint, rendertemplate, request, flash, hashlib
+from datetime import datetime, date
 
 Installs:
 pip install mysql.connector
 pip install --upgrade mysql-connector-python
-pip install Flask
+pip install pandas
+
 

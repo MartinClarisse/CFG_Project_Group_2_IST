@@ -11,7 +11,7 @@ USE BudgetBuddy;
 CREATE TABLE Member_Details(
 	member_id INT AUTO_INCREMENT PRIMARY KEY,
     member_name VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL
+    email VARCHAR(50) NOT NULL UNIQUE 
 );
 
 INSERT INTO Member_Details (member_name, email) VALUES
