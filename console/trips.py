@@ -12,7 +12,7 @@ from db import query_db
 # >> (INDIVIDUAL) TRIP FUNCTION <<
 # This serves as the placeholder for the welcome page.
 # This is the function that is run on the main.py.
-# The user arrives at this page after a successful log in in dashboard sends them back to main, and this function is triggered.
+# The user arrives at this page after a successful login in dashboard sends them back to main, and this function is triggered.
 # ------------------------------------------------------------
 
 
@@ -21,12 +21,12 @@ from db import query_db
 # START OF CORE FUNCTION
 def trip():
     # Retrieve 'session' user
-    session_user_file = open('session_user.txt','r')  # retreiving the session user id which is common across all the tan;
+    session_user_file = open('session_user.txt','r')  # retrieving the session user id which is common across all the code;
     member_id = session_user_file.read()
     session_user_file.close()
 
     # Retrieve 'session' trip
-    session_trip_file = open('session_trip.txt','r')  # retreiving the session user id which is common across all the tan;
+    session_trip_file = open('session_trip.txt','r')  # retrieving the session user id which is common across all the code;
     trip_id = session_trip_file.read()
     session_trip_file.close()
     # Querying db for total costs and contribution
@@ -90,7 +90,7 @@ def trip():
 def prompt_add_contribtion():
     while True:
         prompt_add_contribution = input(
-            "\n> Would you like to let us know about a new contribution? ('Y' or 'N'): ").upper()
+            "\n> Would you like to add a new contribution? ('Y' or 'N'): ").upper()
         if prompt_add_contribution == 'Y' or prompt_add_contribution == 'YES':
             add_contribution()
             break
@@ -114,12 +114,12 @@ def add_contribution():
     while True:
         try:
             # Retrieve 'session' user
-            session_user_file = open('session_user.txt','r')  # retreiving the session user id which is common across all the tan;
+            session_user_file = open('session_user.txt','r')  # retrieving the session user id which is common across all the code;
             member_id = session_user_file.read()
             session_user_file.close()
 
             # Retrieve 'session' trip
-            session_trip_file = open('session_trip.txt','r')  # retreiving the session user id which is common across all the tan;
+            session_trip_file = open('session_trip.txt','r')  # retrieving the session user id which is common across all the code;
             trip_id = session_trip_file.read()
             session_trip_file.close()
 
@@ -146,7 +146,7 @@ def add_contribution():
 
         except ValueError:
             print(
-                f"\n⚠️ Error: Contribution must be entered only as an integer (e.g., '200'). Please enter 0 if there is no new contribution.")
+                f"\n⚠️ Error: Contribution must be entered only as a whole number (e.g., '200'). Please enter 0 if there is no new contribution.")
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     trip()
 
@@ -165,7 +165,7 @@ def exit_trip():
             break
 
         elif exit_trip == 'N' or exit_trip == 'NO':
-            trip() # Call the top of this 'webpage' again so user can view deshboard, add trip, or select to go to trips page.
+            trip() # Call the top of this 'webpage' again so user can view dashboard, add trip, or select to go to trips page.
             break
 
         else:
