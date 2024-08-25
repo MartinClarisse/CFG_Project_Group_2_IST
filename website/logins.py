@@ -4,7 +4,7 @@ import hashlib # Needed for authentication
 
 # This is a file which puts all the code which queries SQL.
 # So once the variables are taken from the inputs in the views, they can be passed into functions here and returned to views.
-# I'm thinking this will probably end up wth more files, like one for each page I imagine?
+# I'm thinking this will probably end up with more files, like one for each page I imagine?
 # And to save on replicating code, the actual db function gets called from db so only a query needs to be passed.
 # Here I am unsure if it needs classes or can just be functions?
 
