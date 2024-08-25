@@ -1,10 +1,10 @@
 # GROUP 2 - CFG PROJECT 
 ## What Are We Building?
 We're creating an innovative travel and budgeting website to help travellers plan their trips more efficiently and economically, including a feature that automatically calculates and distributes shared expenses among travel group members. Our platform combines comprehensive trip planning tools with excellent usability, allowing users to explore new destinations without worrying about budgeting group expenses. 
-The front-end uses HTML templates and CSS, and it's connected to python through flask, and all the data is stored on a SQL database through mysql.connector. 
+Users can interact with their accounts through the python console, and all their data is stored in a SQL database. 
 
 ### How We're Staying Organised: 
-Please look at the "audit.txt" file in the "Documentation" folder to see a log of all our group discussions minutes. 
+Please look at the "meeting_minutes.txt" file in the "Documentation" folder to see a log of all our group discussions minutes. 
 Our group is formed of Chahat, Jessie and Clarisse. 
 
 FOR GROUP MEMBERS: 
@@ -12,31 +12,36 @@ FOR GROUP MEMBERS:
 - [Trello Board](https://trello.com/b/lOTyUoyc/group-2-project-summer-2024)
 - [Activity Log](https://docs.google.com/spreadsheets/d/1U19rlQ5pdbvJYFSjDR26frguT8dG1hwsKwFKL4zfbNI/edit?gid=1877883424#gid=1877883424)
 
-### Branches Being Worked On:
-#### Add-Python-Code
-This is where we are currently getting the python to talk to the HTML and SQL. 
-The connection to the SQL database is working through the python console. 
-We have been having issues between the HTML and python with flask which we are working on too. 
+### IMPORTANT: Branches in development
+#### 🚨Developing Webapp
+This is a very important branch of this repository, as this contains the version of this project with all of the HTML/CSS and flask. 
+Due to time constraints, our group had to pivot from a webapp to a console app. 
+However, please open this branch to understand how the python console mimics the functionality which we had designed in the 'website' worktree. 
+This file also includes the working API. 
+You can find the relevant files in the 'website' directory. 
+Please also watch the mock data demonstration to understand the user journey through the webpages. 
 
 ## Follow Along:
 
-### Visualising the Code:
-To familiarise yourself with the technical architecture, please look at the "Visualising the Code" folder.
+### ❗Visualising the Code:
+To familiarise yourself with the technical architecture, please enter the 'Documentation' repository. in which you can view 
 Here you can find:
-- A visual map of the code.
-- The handout assignment of the course.
+- Visuals of the design architecture in the 'Visualising the Code' folder. This shows the original webapp design and it's replication within python logic. 
+- Records of the group meeting in 'minute_meetings.txt".
+- A record of our group assignment handin. 
 
-### How to Install and Run Project: 
+### ❗How to Install and Run Project: 
 For relevant dependencies:
-- Begin by checking the requirements.txt file.
+- Begin by checking the requirements.txt file. 
 To run the project:
-- Run the script from "Creating SQL Database.sql" from the "SQL_files" folder in mySQL first to initalise the schema and populate the 'dud' value. 
-- Clone all of the website folder files to your local device.
-- Open the website repository folder in Pycharm.
+- Clone all this repository to your local device.
+- Run the SQL script "Creating SQL Database.sql" from the "SQL_files" folder in mySQL first to initalise the schema and populate the 'dud' values. 
+- Open the console repository with all files in Pycharm.
 - NB: Please make sure to edit the "db.py" file to update the passwd to your mySQL password for the connection to work. 
-- Ensure you have have installed the relevant dependencies within this directory.
-- Run the app.py file.
-- Follow the URL provided and navigate the web application.  
+- Ensure you have have installed the relevant dependencies within this directory in the python terminal.
+- Run the main.py file.
+- Navigate the application within the python console.   
 
 ## Group Milestones: 
-- [x] Submitted Group Assignment 02/08/2024. 
+- [x] Submitted Group Assignment 02/08/2024.
+- [x] Submitted Assignment via Github 25/08/2024. 
