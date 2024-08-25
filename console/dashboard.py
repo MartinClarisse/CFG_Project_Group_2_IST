@@ -188,7 +188,7 @@ def new_trip():
             break
 
         except ValueError:
-            print(f"\n⚠️ Error: Costs must be entered as integers only (e.g., '200'). Please enter 0 if there is no cost.")
+            print(f"\n⚠️ Error: Costs must be entered only as integers (e.g., '200'). Please enter 0 if there is no cost.")
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
     # Brings user back to their dashboard/homepage. They will be able to see their new trip added to their trip list when it brings them back.

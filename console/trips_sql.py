@@ -46,38 +46,6 @@ class Enter_trip:
         args = (trip_id, self.member_id,)
         rows_affected = insert_db(insert, args)
         return rows_affected
-# 'Testing' the Class to make sure creating trips and adding costs work properly.
-# Again, this can be moved to the testing file and put in a proper Test Class.
-
-# trip_name = 'Bahamas'
-# start_date = datetime.date(2024, 1, 1)
-# group_size = 2
-# member_id = 2
-# flights_total = 500
-# accomodation_total = 600
-# transfers_total = 100
-# activities_total = 300
-# miscellaneous_total = 150
-#
-# trip1 = Enter_trip(trip_name, start_date, group_size, member_id, flights_total, accomodation_total, transfers_total,
-#              activities_total, miscellaneous_total)
-#
-# trip1.create_trip()
-# trip1.add_costs()
-# trip1.create_contributions()
-
-
-# query1 = "SELECT * FROM Trips;"
-# results = query_db(query1)
-# print(results)
-#
-# query2 = "SELECT * FROM Costs;"
-# results = query_db(query2)
-# print(results)
-#
-# query3 = "SELECT * FROM Contributions;"
-# results = query_db(query3)
-# print(results)
 
 # ------------------------------------------------------------
 
@@ -107,14 +75,6 @@ class Retrieve_trip_id:
         trip_id = result[0][0]
         return trip_id
 
-# 'Testing' the Class to make sure you can see all trip names from member_id being passed in.
-# Again, this can be moved to the testing file and put in a proper Test Class.
-
-# member_id = '2'
-# member_trips1 = View_trips(member_id)
-# trips = member_trips1.view_trip()
-# print(f"all trips ={trips}")
-
 
 # ------------------------------------------------------------
 
@@ -134,57 +94,29 @@ class View_costs:
         return total_cost
 
 
-
-
-# 'Testing' the Class to make sure fetching trip info works.
-# Again, this can be moved to the testing file and put in a proper Test Class.
-
-# trip_id = '2'
-# trip1 = View_costs(member_id)
-# costs = trip1.view_costs()
-# print(f"total costs row= {costs}")
-
 # ------------------------------------------------------------
 
-class Add_contributions:
-    def __init__(self, total, trip_id, member_id):
+class Add_contribution:
+    def __init__(self, new_total, trip_id, member_id):
+        self.new_total = new_total
         self.trip_id = trip_id
         self.member_id = member_id
-        self.total = total
 
     def update_contribution(self):
         insert = "UPDATE Contributions SET total=%s WHERE member_id = %s AND trip_id = %s;"
-        args = (self.total, self.member_id, self.trip_id,)
+        args = (self.new_total, self.member_id, self.trip_id)
         rows_affected = insert_db(insert, args)
         return rows_affected
 
 # ------------------------------------------------------------
 
-class View_contributions:
+class View_contribution:
 
     def __init__(self, trip_id, member_id):
         self.trip_id = trip_id
         self.member_id = member_id
     def view_contribution(self):
-        query = "SELECT * FROM Contributions WHERE member_id = %s AND trip_id = %s;"
+        query = "SELECT total FROM Contributions WHERE member_id = %s AND trip_id = %s;"
         args = (self.member_id, self.trip_id)
         contribution = query_db(query, args)
         return contribution
-
-
-# 'Testing' the Class to make sure updating and fetching contributions work.
-# Again, this can be moved to the testing file and put in a proper Test Class.
-
-# total = '150'
-# trip_id = '2'
-# member_id ='2'
-#
-# contribution = Contributions(total, trip_id, member_id)
-#
-# update_contribution = contribution.update_contribution()
-#
-# view_contribution = contribution.view_contribution()
-# print(f"total contributions row: {view_contribution}")
-
-
-
