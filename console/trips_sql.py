@@ -97,17 +97,15 @@ class View_costs:
 # ------------------------------------------------------------
 
 class Add_contribution:
-    def __init__(self, new_total, trip_id, member_id):
+    def __init__(self, new_total, member_id, trip_id):
         self.new_total = new_total
-        self.trip_id = trip_id
         self.member_id = member_id
-
+        self.trip_id = trip_id
     def update_contribution(self):
         insert = "UPDATE Contributions SET total=%s WHERE member_id = %s AND trip_id = %s;"
         args = (self.new_total, self.member_id, self.trip_id)
         rows_affected = insert_db(insert, args)
         return rows_affected
-
 # ------------------------------------------------------------
 
 class View_contribution:
@@ -120,3 +118,4 @@ class View_contribution:
         args = (self.member_id, self.trip_id)
         contribution = query_db(query, args)
         return contribution
+

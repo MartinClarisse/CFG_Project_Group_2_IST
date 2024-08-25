@@ -15,22 +15,18 @@ from dashboard import dashboard
 # The user arrives at this page after a successful log in in dashboard sends them back to main, and this function is triggered.
 # ------------------------------------------------------------
 
-# ------------------------------------------------------------
-
-# Beginning will pulling all the variables from SQL that are needed.
-# Core function begins immediately below.
-
 # Retrieve 'session' user
-session_user_file = open('session_user.txt','r')  # retreiving the session user id which is common across all the tan;
+session_user_file = open('session_user.txt', 'r')  # retreiving the session user id which is common across all the tan;
 member_id = session_user_file.read()
 session_user_file.close()
 
 # Retrieve 'session' trip
-session_trip_file = open('session_user.txt','r')  # retreiving the session user id which is common across all the tan;
+session_trip_file = open('session_trip.txt', 'r')  # retreiving the session user id which is common across all the tan;
 trip_id = session_trip_file.read()
 session_trip_file.close()
 
-# Using the member_id and trip_id to pull all the Trip table variables. These will be needed in the code.
+# Querying db for total costs and contribution
+# These variables are fixed so it they don't need to be repeated in recursive functions.
 
 query = "SELECT trip_name FROM Trips WHERE member_id = %s and trip_id = %s;"
 args = (member_id, trip_id)
@@ -47,45 +43,51 @@ args = (member_id, trip_id)
 result = query_db(query, args)
 group_size = result[0][0]
 
-# Getting the start date countdown.
-current_date = date.today()
-countdown = (start_date - current_date).days
-
-# Querying db for total costs and contribution
-costs = View_costs(trip_id)
-total_costs = costs.view_total_cost()
-total_costs = total_costs[0][0]
-individual_cost = total_costs / group_size
-
-contribution = View_contribution(member_id, trip_id)
-total_contribution = contribution.view_contribution()
-total_contribution = total_contribution[0][0]
-
-# Solving the remaining contribution.
-remaining_contribution = total_costs - total_contribution
 
 # ------------------------------------------------------------
 # START OF CORE FUNCTION
 def trip():
+    # Using the member_id and trip_id to pull all the Trip table variables. These will be needed in the code.
+    contribution = View_contribution(member_id, trip_id)
+    total_contribution = contribution.view_contribution()
+    total_contribution = total_contribution[0][0]
+
+    costs = View_costs(trip_id)
+    total_costs = costs.view_total_cost()
+    total_costs = total_costs[0][0]
+
+    # Calculate contributions
+    remaining_contribution = total_costs - total_contribution
+
+    # Getting costs per person
+    individual_cost = total_costs / group_size
+
+    # Getting the start date countdown.
+    current_date = date.today()
+    countdown = (start_date - current_date).days
+
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-    print(f"🤔 Let's explore your trip: {trip_name}.\n")
+    print(f"🤔 Let's explore {trip_name}.\n")
     print(f"You leave for your holiday in {countdown} days!\n")
     print(f"The total group costs for your trip come to: {total_costs}")
-    print(f"This amounts to {individual_cost} per person to pay.")
+    print(f"This comes to {individual_cost} per person.")
     print(f"You have {remaining_contribution} left to pay.")
     prompt_costs_overview()
+
 
 # ------------------------------------------------------------
 # Costs overview functions
 def prompt_costs_overview():
-   print("cost overview prompt placeholder")
-   prompt_add_contribtion()
+    print("cost overview prompt placeholder")
+    prompt_add_contribtion()
+
 
 # ------------------------------------------------------------
 # Contribution functions
 def prompt_add_contribtion():
     while True:
-        prompt_add_contribution = input("\n> Would you like to let us know about a new contribution? ('Y' or 'N'): ").upper()
+        prompt_add_contribution = input(
+            "\n> Would you like to let us know about a new contribution? ('Y' or 'N'): ").upper()
         if prompt_add_contribution == 'Y' or prompt_add_contribution == 'YES':
             add_contribution()
             break
@@ -104,12 +106,14 @@ def prompt_add_contribtion():
 
 
 def add_contribution():
-
-    print(f"\nGreat. Your contribution's total for {trip_name} is {total_contribution}.")
-    print(f"\nYou can add up to {remaining_contribution} to meet your contribution total.")
+    print(f"\nGreat!")
 
     while True:
         try:
+            # fetch variables again in new function.
+            contribution = View_contribution(member_id, trip_id)
+            total_contribution = contribution.view_contribution()
+            total_contribution = total_contribution[0][0]
             # Getting user input and converting it to integer
             input_contribution = input("Please enter the amount you would like to add: ").strip()
             input_contribution = int(input_contribution)  # Convert input to integer
@@ -118,25 +122,12 @@ def add_contribution():
             if input_contribution < 0:
                 raise ValueError
 
-
+            # Update the data in SQL.
             new_total = input_contribution + total_contribution
-            update_contribution = Add_contribution(new_total, trip_id, member_id)
-            new_contribution = update_contribution.update_contribution()
-
-
+            update_contribution = Add_contribution(new_total, member_id, trip_id)
+            update_contribution.update_contribution()
 
             print(f"\n🎉 {input_contribution} was successfully added to your contribution total!")
-            trip()
-
-
-            #
-            # new_total = total_contribution + new_contribution
-            #
-            # contribution = Add_contribution(new_total, trip_id, member_id)
-            # contribution.update_contribution()
-            # print(f"You now have {remaining_contribution} left to pay.")
-
-            # Passing variables to SQL databases (if needed)
 
             break  # Exit the loop if contribution addition is successful
 
@@ -144,12 +135,11 @@ def add_contribution():
             print(
                 f"\n⚠️ Error: Contribution must be entered only as integers (e.g., '200'). Please enter 0 if there is no new contribution.")
             print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    trip()
+
 
 # ------------------------------------------------------------
 # Ending trip 'session' and returning to user dashboard.
 
 def exit_trip():
     print("this is a placehoder to exit trip page")
-
-
-trip()
