@@ -235,11 +235,6 @@ def logout():
 
         if logout == 'Y' or logout == 'YES':
             print("\nThank you for logging in. See you next time! ✈️")
-            # End 'session' for user by deleting their member_id from session file.
-            # This is just for good practice as each time the login functions runs the 'w' functions overrides the member_id anyway.
-            session_user_file = open('session_user.txt','w')  # retreiving the session user id
-            session_user_file.truncate()
-            session_user_file.close()
             # Finally, send user back to the first function from the index. This is to serve back as an almost hyperlink.
             index()
             break

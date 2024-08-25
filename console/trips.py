@@ -151,12 +151,6 @@ def exit_trip():
 
         if exit_trip == 'Y' or exit_trip == 'YES':
             print("\nThank you for logging in. See you next time! ✈️")
-            # End 'session' for trip by deleting their member_id from session file.
-            # This is just for good practice as each time the login functions runs the 'w' functions overrides the trip_id anyway.
-            session_trip_file = open('session_trip.txt','w')  # retreiving the session trip_id
-            session_trip_file.truncate()
-            session_trip_file.close()
-            # Finally, send user back to the first function from the trip. This is to serve back as an almost hyperlink.
             dashboard()
             break
 
