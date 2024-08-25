@@ -45,7 +45,7 @@ def insert_db(insert, args=(), commit=True):
 
         if commit:
             db.commit()
-            return cursor.rowcount  # Return the number of affected rows for INSERT, UPDATE, DELETE
+            return cursor.rowcount  # Return the number of effected rows for INSERT, UPDATE, DELETE
 
         # For SELECT queries, fetch results
         return cursor.fetchall()
