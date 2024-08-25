@@ -11,20 +11,20 @@ def index():
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("""
     \n👋 Welcome to BudgetBuddy \n
-    We're an innovative travel and budgeting console to help travellers plan their trips more efficiently and economically.
-    Our travel and budgeting website provides a comprehensive range of tools and features 
+    We're an innovative travel and budgeting console, to help travellers plan their trips more efficiently and economically.
+    Our travel and budgeting website provides a comprehensive range of tools and features, 
     to streamline the vacation planning and budgeting process. 
-    Members have easy access to total contributions, which alleviates some of the stress of holiday planning as a group. \n
+    Members have easy access to total contributions, which alleviates some of the stress of group holiday planning. \n
     """)
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
     print("> Please tell us whether you want to login, or create an account.\n")
     print("For 'login', enter: L\n"
           "For 'create an account', enter: C\n")
 
-    handling_login() # This brings the console to the login handling in the next function.
+    handling_login() # This brings the console to the login handling, in the next function.
 
 # ------------------------------------------------------------
-# Function to create error handling loop for log in input choice option.
+# Function to create error handling loop for login input choice option.
 def handling_login():
 
         while True:

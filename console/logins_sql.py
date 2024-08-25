@@ -2,9 +2,9 @@ from db import query_db, insert_db
 import hashlib # Needed for authentication
 # ------------------------------------------------------------
 
-# This is a file which puts all the code which queries SQL.
+# This is a file which inputs all the code which queries SQL.
 # So once the variables are taken from the inputs in the views, they can be passed into functions here and returned to views.
-# I'm thinking this will probably end up wth more files, like one for each page I imagine?
+# I'm thinking this will probably end up with more files, like one for each page I imagine?
 # And to save on replicating code, the actual db function gets called from db so only a query needs to be passed.
 # Here I am unsure if it needs classes or can just be functions?
 
@@ -44,7 +44,7 @@ class Authentication:
 # ------------------------------------------------------------
 # Sending new user variables into the SQL database.
 class User:
-    # Initnitialising class with the values for the Member_id and Authentication table.
+    # Initialising class with the values for the Member_id and Authentication table.
     def __init__(self, name, email, username, password):
         self.name = name
         self.email = email
@@ -85,7 +85,7 @@ class User:
 
 
 # 'Testing' the Class to make sure authentication works properly'
-# Rather than this, this would need to then use the boolean values in if statements on view to determine wether to move on to dashboard or raise error.
+# Rather than this, this would need to then use the boolean values in if statements on view, to determine whether to move on to dashboard or raise error.
 
 
 # name = 'Rachel Green'
