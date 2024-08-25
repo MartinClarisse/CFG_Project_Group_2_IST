@@ -19,7 +19,7 @@ Due to time constraints, our group had to pivot from a webapp to a console app.
 However, please open this branch to understand how the python console mimics the functionality which we had designed in the 'website' worktree. 
 This file also includes the working API. 
 You can find the relevant files in the 'website' directory. 
-Please also watch the mock data demonstration to understand the user journey through the webpages. 
+Please also watch the mock data demonstration to understand the user journey through the webpages. This is in the main repository of this development branch, titled'HTML Demo.mp4'. You may need to download this to play due to file size. 
 
 ## Follow Along:
 
